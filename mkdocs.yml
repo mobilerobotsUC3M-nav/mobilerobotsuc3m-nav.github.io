@@ -1,0 +1,92 @@
+# Configuración de la web del grupo.
+
+site_name: Mobile Robots Group · Navegación
+site_description: Recursos, tutoriales y guías de la división de navegación del Mobile Robots Group
+site_url: https://mobilerobotsuc3m-nav.github.io/
+repo_url: https://github.com/mobilerobotsUC3M-nav/mobilerobotsuc3m-nav.github.io
+repo_name: mobilerobotsUC3M-nav/mobilerobotsuc3m-nav.github.io
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  language: es
+  icon:
+    logo: material/robot-mower-outline
+    repo: fontawesome/brands/github
+  favicon: assets/favicon.svg
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: teal
+      toggle:
+        icon: material/weather-night
+        name: Cambiar a modo oscuro
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: teal
+      toggle:
+        icon: material/weather-sunny
+        name: Cambiar a modo claro
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - navigation.indexes
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.code.annotate
+    - content.action.edit
+    - toc.follow
+
+nav:
+  - Inicio: index.md
+  - Tutoriales:
+      - tutoriales/index.md
+      - Ubuntu junto a Windows: tutoriales/dual-boot.md
+      - Git y GitHub:
+          - 1. Primeros pasos: tutoriales/github/01-primeros-pasos.md
+          - 2. Ramas y pull requests: tutoriales/github/02-ramas.md
+          - 3. Buenas prácticas: tutoriales/github/03-buenas-practicas.md
+      - ROS:
+          - Instalar ROS Noetic: tutoriales/ros-noetic.md
+          - ROS en varios ordenadores: tutoriales/ros-red.md
+          - Stack de navegación: tutoriales/navegacion.md
+      - Cámara RealSense: tutoriales/realsense.md
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - footnotes
+  - def_list
+  - toc:
+      permalink: true
+      toc_depth: 3
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+extra_css:
+  - assets/extra.css
+
+copyright: Mobile Robots Group · División de navegación

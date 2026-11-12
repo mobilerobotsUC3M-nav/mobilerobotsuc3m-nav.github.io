@@ -1,0 +1,12 @@
+# Web generada por MkDocs (se crea con `mkdocs build`)
+site/
+
+# Python
+__pycache__/
+.venv/
+venv/
+
+# Sistema / editores
+.DS_Store
+.vscode/
+.idea/

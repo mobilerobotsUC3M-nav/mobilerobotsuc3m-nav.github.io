@@ -61,3 +61,22 @@
 .md-typeset details.portada > summary::before {
   background-color: var(--md-primary-fg-color);
 }
+
+/* ---- Etiqueta del bloque (ROS 1 / ROS 2) al principio de cada página ---- */
+.md-typeset .bloque {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.2rem 0.7rem;
+  border-radius: 1rem;
+  margin: -0.6rem 0 0.6rem;
+  color: #fff;
+}
+
+.md-typeset .bloque-ros1 {
+  background-color: #c2410c;   /* naranja */
+}
+
+.md-typeset .bloque-ros2 {
+  background-color: #1d4ed8;   /* azul */
+}

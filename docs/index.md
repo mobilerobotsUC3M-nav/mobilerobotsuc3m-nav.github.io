@@ -18,9 +18,9 @@ documentación de los robots del grupo. Usa el menú de la izquierda para movert
     - [ ] Acepta la invitación a la organización [`mobilerobotsUC3M-nav`](https://github.com/mobilerobotsUC3M-nav) (te llegará por correo).
     - [ ] Haz el tutorial [Git y GitHub: primeros pasos](tutoriales/github/01-primeros-pasos.md) y clona tu repositorio de TFG.
     - [ ] Lee las [buenas prácticas](tutoriales/github/03-buenas-practicas.md). Son cortas y te ahorrarán muchos disgustos.
-    - [ ] Si tu ordenador tiene Windows, instala [Ubuntu 20.04 en arranque dual](tutoriales/dual-boot.md).
-    - [ ] Instala [ROS Noetic](tutoriales/ros-noetic.md) si tu trabajo usa ROS.
-    - [ ] Antes de trabajar con un robot real, haz [ROS en varios ordenadores](tutoriales/ros-red.md) y lee la página de [tu robot](robots/index.md).
+    - [ ] Pregunta a tu tutor/a en qué **bloque** vas a trabajar: [ROS 1](tutoriales/ros1/index.md) (Ubuntu 20.04 + Noetic, el de los robots del grupo) o [ROS 2](tutoriales/ros2/index.md) (Ubuntu 24.04 + Jazzy).
+    - [ ] Instala Ubuntu y ROS siguiendo los tutoriales **de tu bloque**, en orden.
+    - [ ] Antes de trabajar con un robot real, lee la página de [tu robot](robots/index.md).
     - [ ] Mira los repos de TFG de años anteriores en la organización: son el mejor ejemplo de lo que se espera.
 
 ??? portada "Cómo nos organizamos"
@@ -44,8 +44,8 @@ documentación de los robots del grupo. Usa el menú de la izquierda para movert
     ├── python/            ← pruebas y algoritmos en Python
     │   ├── src/
     │   └── notebooks/
-    ├── catkin_ws/
-    │   └── src/           ← paquetes de ROS
+    ├── catkin_ws/         ← paquetes de ROS 1 (o ros2_ws/ si trabajas en ROS 2)
+    │   └── src/
     ├── data/              ← solo datos pequeños; rosbags y datasets, fuera de Git
     └── docs/              ← notas, figuras, material para la memoria
     ```

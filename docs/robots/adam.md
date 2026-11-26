@@ -1,5 +1,7 @@
 # ADAM (base RB-1)
 
+<span class="bloque bloque-ros1">ROS 1 · Ubuntu 20.04 + Noetic</span>
+
 ADAM es un robot **RB1-Dual UR3** de Robotnik: una base móvil **RB-1**, un torso y dos brazos
 UR3. Esta página cubre **solo la base**: encenderla, conectarte a ella, qué software trae y
 cómo mapear y navegar.
@@ -105,7 +107,7 @@ al ordenador del robot.
     En lugar de `ROS_IP`, también puedes añadir **tu portátil** al `/etc/hosts` del robot
     (con tu IP y el nombre de tu ordenador, que ves con `hostname`). Así el robot sabe llegar a ti
     por tu nombre. Es lo mismo que se explica en
-    [ROS en varios ordenadores](../tutoriales/ros-red.md#4-usar-nombres-en-vez-de-ips-etchosts).
+    [ROS en varios ordenadores](../tutoriales/ros1/red.md#4-usar-nombres-en-vez-de-ips-etchosts).
 
 ### Entrar en el ordenador del robot
 
@@ -256,7 +258,7 @@ la terminal de `move_base` mostrará:
 
 ### Mandar objetivos desde Python
 
-El script del [tutorial de navegación](../tutoriales/navegacion.md#5-enviar-objetivos-desde-python)
+El script del [tutorial de navegación](../tutoriales/ros1/navegacion.md#5-enviar-objetivos-desde-python)
 sirve con dos cambios:
 
 ```python

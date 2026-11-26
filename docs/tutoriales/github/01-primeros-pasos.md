@@ -256,6 +256,11 @@ catkin_ws/devel/
 catkin_ws/install/
 catkin_ws/logs/
 
+# ROS 2 (colcon)
+ros2_ws/build/
+ros2_ws/install/
+ros2_ws/log/
+
 # Datos pesados
 *.bag
 data/raw/

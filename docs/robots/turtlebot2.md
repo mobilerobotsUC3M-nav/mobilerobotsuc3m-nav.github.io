@@ -1,5 +1,7 @@
 # TurtleBot 2
 
+<span class="bloque bloque-ros1">ROS 1 · Ubuntu 20.04 + Noetic</span>
+
 El TurtleBot 2 es un robot de investigación y docencia muy extendido. Está formado por una
 base **Kobuki**, una estructura de bandejas y, en nuestro caso, un ordenador **KIRA** y un
 láser **Hokuyo URG**.
@@ -55,18 +57,36 @@ tu portátil para mover el robot. Tienes dos formas de trabajar:
     Conecta pantalla, teclado y ratón al KIRA y abre terminales en él. Es lo más sencillo
     para las primeras pruebas, con el robot quieto.
 
-=== "Desde tu portátil por SSH"
+=== "Desde tu portátil, en remoto"
 
-    Conéctate a la misma red que el KIRA y entra por SSH:
+    Conecta tu portátil a la wifi del router **`navibot`**, igual que el KIRA (ver el aviso de
+    abajo), y entra por SSH:
 
     ```bash
     ssh USUARIO@IP_DEL_KIRA
     ```
 
     La IP y el usuario te los da tu tutor/a. Para lanzar varios comandos a la vez, usa `tmux`
-    (explicado en [ROS en varios ordenadores](../tutoriales/ros-red.md#que-no-se-corte-al-cerrar-la-terminal-tmux)).
-    Si quieres usar RViz en tu portátil, configura la red ROS como explica ese mismo tutorial,
-    con el master en el KIRA.
+    (explicado en [ROS en varios ordenadores](../tutoriales/ros1/red.md#que-no-se-corte-al-cerrar-la-terminal-tmux)).
+
+    Si además quieres usar RViz o tus scripts **en tu portátil**, configura la red ROS con el
+    master en el KIRA, en cada terminal del portátil:
+
+    ```bash
+    export ROS_MASTER_URI=http://IP_DEL_KIRA:11311
+    export ROS_IP=TU_IP_EN_NAVIBOT        # la ves con: hostname -I
+    ```
+
+    Y en el KIRA, `ROS_IP` con su propia IP. Todo esto se explica paso a paso en
+    [ROS en varios ordenadores](../tutoriales/ros1/red.md).
+
+!!! warning "Usa siempre el router `navibot`, no la wifi de la universidad"
+    Para conectarte al KIRA en remoto (por SSH o con la red ROS), tu portátil y el KIRA tienen
+    que estar conectados al router del grupo, **`navibot`**. La wifi de la universidad
+    (eduroam y similares) **bloquea por seguridad** las conexiones directas entre dispositivos:
+    aunque los dos tengan internet, no se verán entre sí y ni SSH ni ROS funcionarán.
+
+    La contraseña de `navibot` te la da tu tutor/a.
 
 ## 4. Paquetes instalados y topics
 
@@ -195,7 +215,7 @@ En RViz:
 2. Pulsa **2D Nav Goal** y marca el destino.
 
 Para mandar objetivos desde Python, el código del
-[tutorial de navegación](../tutoriales/navegacion.md#5-enviar-objetivos-desde-python) funciona
+[tutorial de navegación](../tutoriales/ros1/navegacion.md#5-enviar-objetivos-desde-python) funciona
 igual en el TurtleBot 2: el action server es `move_base` y el sistema de referencia, `map`.
 
 ## Problemas frecuentes
@@ -211,6 +231,12 @@ igual en el TurtleBot 2: el action server es `move_base` y el sistema de referen
     - ¿Está encendida la base y conectado su cable USB?
     - Comprueba que existe `/dev/kobuki` con `ls -l /dev/kobuki`. Si no existe, avisa a tu tutor/a:
       falta la regla de udev en el KIRA.
+
+??? failure "No consigo conectarme al KIRA por SSH, o veo los topics pero no llegan datos"
+    - Comprueba que **tu portátil y el KIRA** están conectados al router **`navibot`**, no a la
+      wifi de la universidad.
+    - Haz `ping IP_DEL_KIRA` desde el portátil y `ping TU_IP` desde el KIRA.
+    - Revisa `ROS_MASTER_URI` y `ROS_IP` en los dos (`env | grep ROS`).
 
 ??? failure "El robot no se mueve aunque `move_base` calcula una ruta"
     - ¿Está la teleoperación lanzada y mandando velocidad cero? Tiene más prioridad que la

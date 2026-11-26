@@ -46,16 +46,25 @@ nav:
   - Inicio: index.md
   - Tutoriales:
       - tutoriales/index.md
-      - Ubuntu junto a Windows: tutoriales/dual-boot.md
       - Git y GitHub:
           - 1. Primeros pasos: tutoriales/github/01-primeros-pasos.md
           - 2. Ramas y pull requests: tutoriales/github/02-ramas.md
           - 3. Buenas prácticas: tutoriales/github/03-buenas-practicas.md
-      - ROS:
-          - Instalar ROS Noetic: tutoriales/ros-noetic.md
-          - ROS en varios ordenadores: tutoriales/ros-red.md
-          - Stack de navegación: tutoriales/navegacion.md
-      - Cámara RealSense: tutoriales/realsense.md
+      - "ROS 1 · Ubuntu 20.04 + Noetic":
+          - tutoriales/ros1/index.md
+          - 1. Instalar Ubuntu 20.04: tutoriales/ros1/ubuntu20.md
+          - 2. Instalar ROS Noetic: tutoriales/ros1/instalar-noetic.md
+          - 3. ROS en varios ordenadores: tutoriales/ros1/red.md
+          - 4. Stack de navegación: tutoriales/ros1/navegacion.md
+          - 5. Cámara RealSense: tutoriales/ros1/realsense.md
+      - "ROS 2 · Ubuntu 24.04 + Jazzy":
+          - tutoriales/ros2/index.md
+          - 1. Instalar Ubuntu 24.04: tutoriales/ros2/ubuntu24.md
+          - 2. Instalar ROS 2 Jazzy: tutoriales/ros2/instalar-jazzy.md
+          - 3. Introducción a ROS 2: tutoriales/ros2/introduccion.md
+          - 4. ROS 2 en varios ordenadores: tutoriales/ros2/red.md
+          - 5. Navegación con Nav2: tutoriales/ros2/navegacion.md
+          - 6. Cámara RealSense: tutoriales/ros2/realsense.md
   - Robots:
       - robots/index.md
       - TurtleBot 2: robots/turtlebot2.md

@@ -30,8 +30,8 @@ theme:
         icon: material/weather-sunny
         name: Cambiar a modo claro
   features:
-    - navigation.tabs
-    - navigation.sections
+    # Sin navigation.tabs ni navigation.sections: todo el índice va en el menú
+    # de la izquierda y cada sección se abre y se cierra al pulsarla.
     - navigation.top
     - navigation.footer
     - navigation.indexes
@@ -56,6 +56,10 @@ nav:
           - ROS en varios ordenadores: tutoriales/ros-red.md
           - Stack de navegación: tutoriales/navegacion.md
       - Cámara RealSense: tutoriales/realsense.md
+  - Robots:
+      - robots/index.md
+      - TurtleBot 2: robots/turtlebot2.md
+      - ADAM (base RB-1): robots/adam.md
 
 markdown_extensions:
   - admonition
@@ -88,5 +92,8 @@ markdown_extensions:
 
 extra_css:
   - assets/extra.css
+
+extra_javascript:
+  - assets/menu.js
 
 copyright: Mobile Robots Group · División de navegación

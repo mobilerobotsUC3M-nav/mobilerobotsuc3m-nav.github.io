@@ -13,7 +13,8 @@ Código fuente de la web de recursos y tutoriales del grupo, hecha con
 ├── .github/workflows/          ← publica la web sola al hacer push a main
 └── docs/                       ← el contenido: un archivo .md por página
     ├── index.md                ← portada
-    ├── assets/                 ← logo, estilos
+    ├── assets/                 ← logo, estilos, botón del menú (menu.js)
+    ├── robots/                 ← TurtleBot 2 y ADAM
     └── tutoriales/
         ├── index.md
         ├── dual-boot.md        ← Ubuntu junto a Windows

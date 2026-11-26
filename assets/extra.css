@@ -1,0 +1,82 @@
+/* Ajustes pequeños sobre el tema Material */
+
+/* Bloque "comando del día a día" destacado */
+.md-typeset .rutina {
+  border-left: 4px solid var(--md-accent-fg-color);
+  padding-left: 1rem;
+}
+
+/* Tablas a todo el ancho */
+.md-typeset table:not([class]) {
+  display: table;
+  width: 100%;
+}
+
+/* ---- Menú lateral plegable (ver assets/menu.js) ---- */
+
+/* El botón solo se ve en pantallas grandes; en el móvil Material ya tiene el suyo */
+.md-header__inner .boton-menu {
+  display: none;
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 76.25em) {
+  .md-header__inner .boton-menu {
+    display: inline-block;
+  }
+
+  body.menu-oculto .md-sidebar--primary {
+    display: none;
+  }
+}
+
+/* Títulos de las secciones del menú un poco más marcados */
+.md-nav--primary > .md-nav__list > .md-nav__item--nested > .md-nav__link {
+  font-weight: 700;
+}
+
+/* ---- Portada ---- */
+
+.md-typeset .portada-intro {
+  font-size: 0.95rem;
+  color: var(--md-default-fg-color--light);
+  margin-bottom: 2rem;
+}
+
+/* Desplegables de la portada: sin icono de color, más sobrios */
+.md-typeset details.portada {
+  border-color: var(--md-default-fg-color--lightest);
+  box-shadow: none;
+}
+
+.md-typeset details.portada > summary {
+  background-color: transparent;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.md-typeset details.portada > summary::before {
+  background-color: var(--md-primary-fg-color);
+}
+
+/* ---- Etiqueta del bloque (ROS 1 / ROS 2) al principio de cada página ---- */
+.md-typeset .bloque {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.2rem 0.7rem;
+  border-radius: 1rem;
+  margin: -0.6rem 0 0.6rem;
+  color: #fff;
+}
+
+.md-typeset .bloque-ros1 {
+  background-color: #c2410c;   /* naranja */
+}
+
+.md-typeset .bloque-ros2 {
+  background-color: #1d4ed8;   /* azul */
+}
